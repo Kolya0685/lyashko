@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Боксерський клуб Ляшка</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #cc0000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav {
+      background: #a31000;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: #006fc0;
+    }
+
+    main {
+      padding: 2rem;
+      flex: 1;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    img, video {
+      width: 500px;
+      height: 350px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    iframe {
+      width: 700px;
+      height: 400px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #cc0000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showPage('home')">Головна</a>
+    <a onclick="showPage('about')">Про нас</a>
+    <a onclick="showPage('gallery')">Галерея</a>
+    <a onclick="showPage('video')">Відео</a>
+    <a onclick="showPage('contact')">Контакти</a>
+  </nav>
+
+  <main>
+
+    <section id="home" class="active">
+      <h2>Головна сторінка</h2>
+      <p>Ласкаво просимо до боксерського клубу імені Олега Ляшка.
+        Саме тут вас навчать як правильно бити депутатів та як правильно їсти землю.
+      </p>
+      <div class="gallery-container">
+        <img src="lyashko.jpg" alt="Фото головне">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Про нас</h2>
+      <p>У нашої школи багато успішних випускників, такі як Михайло Дайсон, Володя Клічко та Хабіб Магрегор.
+        Навчимо вас потужних ударів, як тримати удар, як бити скотиняк та звідки газ до України іде.
+      </p>
+      <h3>Фото вихованців</h3>
+      <div class="gallery-container">
+        <img src="mk.jpg" alt="Михайло Дайсон">
+        <img src="klitchko.jpg" alt="Володя Клічко">
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Галерея</h2>
+      <p>ФОТО НАШОГО ВОЖДЯ</p>
+      <div class="gallery-container">
+        <img src="1.jpeg" alt="Фото 1">
+        <img src="2.jpg" alt="Фото 2">
+        <img src="3.jpg" alt="Фото 3">
+        <img src="4.jpg" alt="Фото 4">
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Відео</h2>
+      <h3>Найкращі бої наших наставників</h3>
+      <h4>Тут і про захист і про атаку і про їжу</h4>
+      <div class="gallery-container">
+        <video controls>
+          <source src="fight.mp4" type="video/mp4">
+        </video>
+
+        <video controls>
+          <source src="dc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Контакти</h2>
+      <p>Зі мною можна зв’язатися через вила, мішок чорнозему або ліфт</p>
+      <ul>
+        <li>Email: lyashkobox@gmail.com</li>
+        <li>Телефон: +380 77 777 7777</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <h1>Боксерський клуб Олєга Ляшка</h1>
+    <p>&copy; 2025 Боксерський клуб Ляшка</p>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
